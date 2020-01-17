@@ -74,6 +74,9 @@ function renderCafe(doc){
      var cell8 =row.insertCell(7);
      var cell9 =row.insertCell(8);
      var cell10 =row.insertCell(9);
+   
+    var cell11 =row.insertCell(10);
+
      cell1.innerHTML= i;
     cell2.innerHTML = name.textContent;
     cell3.innerHTML = batch.textContent;
@@ -84,6 +87,7 @@ function renderCafe(doc){
      cell8.innerHTML = phone.textContent;
      cell9.innerHTML = location.textContent;
      cell10.innerHTML = higher.textContent;
+     cell11.innerHTML = company.textContent;
     
  i=i-1;
 }
