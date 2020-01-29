@@ -12,6 +12,7 @@ firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
 var storage = firebase.storage();
 var storageRef = storage.ref();
+var list = [];
 
 
 
@@ -32,7 +33,7 @@ $('#search').on('click', function () {
 
     query = query.orderBy("name");
 
-    var list = [];
+    
     var c = 0;
     query.get()
         .then(function (querySnapshot) {
@@ -77,10 +78,10 @@ $('#search').on('click', function () {
 
             list.forEach(person => {
                 img_id = person.photo.split('.')[0]
-                htmlString = ` <div class="col-md-3">
-            <div class="person">
+                htmlString = ` <div class="col-md-3"  id="e">
+            <div class="person" id="details">
                 <div class="im-container"><img class="pic" src="images/logo.jpg" id="` + img_id + `"></div>
-                <div class="name"><strong>` + person.name + `</strong></div>
+                <div class="name"id="n"><strong>` + person.name + `</strong></div>
                 <div class="name">` + person.company + `</div>
               
                 
@@ -97,4 +98,9 @@ $('#search').on('click', function () {
         .catch(function (error) {
             console.log("Error getting documents: ", error);
         });
+})
+$("#results").click(function()
+{alert("hi")
+ var x=$("#n").text()
+alert(x)
 })
