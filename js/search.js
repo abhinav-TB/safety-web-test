@@ -102,5 +102,5 @@ $('#search').on('click', function () {
 $("#results").click(function()
 {alert("hi")
  var x=$("#n").text()
-alert(list[3].name)
+alert(list[4].name)
 })
