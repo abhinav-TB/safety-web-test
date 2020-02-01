@@ -76,20 +76,20 @@ $('#search').on('click', function () {
             row = $("#row_1")
             row.empty();
 
-            list.forEach(person => {
-                img_id = person.photo.split('.')[0]
+            for(x in list) {
+                img_id = list[x].photo.split('.')[0]
                 htmlString = ` <div class="col-md-3"  id="e">
             <div class="person" id="details">
                 <div class="im-container"><img class="pic" src="images/logo.jpg" id="` + img_id + `"></div>
-                <div class="name"id="n"><strong>` + person.name + `</strong></div>
-                <div class="name">` + person.company + `</div>
+                <div class="name"id="n"><strong>` + list[x].name + `</strong></div>
+                <div class="name">` + list[x].company + `</div>
               
                 
                 
             </div>
         </div> `
                 row.append(htmlString)
-            });
+            };
 
             // $("#placeholder").remove();
 
@@ -102,5 +102,5 @@ $('#search').on('click', function () {
 $("#results").click(function()
 {alert("hi")
  var x=$("#n").text()
-alert(x)
+alert(list[2].name)
 })
